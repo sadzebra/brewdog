@@ -16,9 +16,16 @@ const AccordionElement = props => {
     border: "1px solid black"
   }
 
+  const handleOnClick = (e) => {
+    e.preventDefault();
+
+    console.log("onClick handler");
+
+  }
+
   return (
-    <li style={listItemStyle}>
-      <h1>{ props.name }</h1>
+    <li style={listItemStyle} onClick={handleOnClick}>
+      <h1 data={props}>{ props.name }</h1>
       <ul style={descriptionStyle}>
         <li>Description: { props.description }</li>
       </ul>
