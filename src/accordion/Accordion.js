@@ -4,8 +4,6 @@ import AccordionElement from './AccordionElement';
 
 const Accordion = props => {
 
-  console.log("Props", props.beers);
-
   const titleStyle = {
     listStyle: "none",
     textAlign: "left",
@@ -13,14 +11,14 @@ const Accordion = props => {
 
   let accordionElements = Object.keys(props.beers).map(function(keyName, keyIndex) {
       return <AccordionElement
-                name={props.beers[keyName].name}
-                description={props.beers[keyName].description}
+                {...props.beers[keyName]}
+                key={props.beers[keyName].id}
               />;
   })
 
 
   return (
-    <ul classname="accordion" style={titleStyle}>
+    <ul className="accordion" style={titleStyle}>
       {accordionElements}
     </ul>
   );
