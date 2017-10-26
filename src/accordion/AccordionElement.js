@@ -1,36 +1,38 @@
-import React from 'react';
+import React, { Component } from 'react';
 
-const AccordionElement = props => {
+class AccordionElement extends React.Component {
 
-  const descriptionStyle = {
-    listStyle: "none",
-    textAlign: "left",
-    margin: "0",
-    padding: "0"
+  constructor(props) {
+    super(props);
+    this.state = {
+      open: false
+    }
   }
 
-  const listItemStyle = {
-    margin: "0",
-    padding: "10px 0 10px 0",
-    marginBottom: "5px",
-    border: "1px solid black"
-  }
-
-  const handleOnClick = (e) => {
+  handleOnClick = (e) => {
     e.preventDefault();
-
-    console.log("onClick handler");
-
+    this.setState({ open: !this.state.open });
   }
 
-  return (
-    <li style={listItemStyle} onClick={handleOnClick}>
-      <h1 data={props}>{ props.name }</h1>
-      <ul style={descriptionStyle}>
-        <li>Description: { props.description }</li>
+  renderDescription() {
+    const description = (
+      <ul>
+        <li>Description: { this.state.description }</li>
       </ul>
-    </li>
-  );
+    );
+    return this.state.open ? description : null;
+  }
+
+  render(){
+    return (
+      <li onClick={this.handleOnClick}>
+        <h1>{ this.props.name }</h1>
+        <li >
+          {this.renderDescription()}
+        </li>
+      </li>
+    );
+  }
 
 }
 
