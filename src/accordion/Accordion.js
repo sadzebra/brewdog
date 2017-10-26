@@ -15,8 +15,7 @@ const Accordion = props => {
                 key={props.beers[keyName].id}
               />;
   })
-
-
+  
   return (
     <ul className="accordion" style={titleStyle}>
       {accordionElements}

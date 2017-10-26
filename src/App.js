@@ -23,19 +23,6 @@ class App extends Component {
       .catch(error => {
         console.log("Porblem getting data", error);
       });
-
-    /*
-      Get data using the Fetch method
-    */
-    // fetch('https://api.punkapi.com/v2/beers')
-    //   .then(response => response.json())
-    //   .then(responseData => {
-    //     this.setState({ beers: responseData })
-    //     // console.log("responseData", responseData);
-    //   })
-    //   .catch(error => {
-    //     console.log("Could not reach server", error);
-    //   })
   }
 
   render() {
