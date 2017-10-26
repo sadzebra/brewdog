@@ -11,7 +11,7 @@ const Accordion = props => {
     textAlign: "left",
   };
 
-  let test = Object.keys(props.beers).map(function(keyName, keyIndex) {
+  let accordionElements = Object.keys(props.beers).map(function(keyName, keyIndex) {
       return <AccordionElement
                 name={props.beers[keyName].name}
                 description={props.beers[keyName].description}
@@ -21,7 +21,7 @@ const Accordion = props => {
 
   return (
     <ul classname="accordion" style={titleStyle}>
-      {test}
+      {accordionElements}
     </ul>
   );
 

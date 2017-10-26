@@ -2,8 +2,6 @@ import React from 'react';
 
 const AccordionElement = props => {
 
-  console.log("Accordionelements Props Desc", props.description);
-
   const descriptionStyle = {
     listStyle: "none",
     textAlign: "left",
