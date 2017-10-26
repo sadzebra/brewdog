@@ -2,10 +2,29 @@ import React from 'react';
 
 const AccordionElement = props => {
 
-  console.log("Accordionelements Props", props);
+  console.log("Accordionelements Props Desc", props.description);
+
+  const descriptionStyle = {
+    listStyle: "none",
+    textAlign: "left",
+    margin: "0",
+    padding: "0"
+  }
+
+  const listItemStyle = {
+    margin: "0",
+    padding: "10px 0 10px 0",
+    marginBottom: "5px",
+    border: "1px solid black"
+  }
 
   return (
-    <li>{ props.name }</li>
+    <li style={listItemStyle}>
+      <h1>{ props.name }</h1>
+      <ul style={descriptionStyle}>
+        <li>Description: { props.description }</li>
+      </ul>
+    </li>
   );
 
 }
