@@ -17,7 +17,7 @@ class AccordionElement extends React.Component {
   renderDescription() {
     const description = (
       <ul>
-        <li>Description: { this.state.description }</li>
+        <li>Description: { this.props.description }</li>
       </ul>
     );
     return this.state.open ? description : null;
