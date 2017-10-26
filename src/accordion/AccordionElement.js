@@ -2,10 +2,10 @@ import React from 'react';
 
 const AccordionElement = props => {
 
-  console.log("Props", props);
+  console.log("Accordionelements Props", props);
 
   return (
-    <li>Accordion element</li>
+    <li>{ props.name }</li>
   );
 
 }

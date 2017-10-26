@@ -8,7 +8,7 @@ class App extends Component {
   constructor(){
   	super();
   	this.state = {
-      beers: []
+      beers: {}
     };
   }
 
@@ -39,7 +39,6 @@ class App extends Component {
   }
 
   render() {
-    console.log("the beers", this.state.beers);
     return (
       <div className="App">
         <Accordion beers={this.state.beers} />
