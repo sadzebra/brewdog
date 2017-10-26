@@ -1,4 +1,4 @@
-import React, { Component } from 'react';
+import React from 'react';
 
 class AccordionElement extends React.Component {
 
@@ -16,20 +16,25 @@ class AccordionElement extends React.Component {
 
   renderDescription() {
     const description = (
-      <ul>
-        <li>Description: { this.props.description }</li>
-      </ul>
+      <div>
+        Description: { this.props.description }
+      </div>
     );
     return this.state.open ? description : null;
+  }
+
+  renderTitle(){
+    return (
+      <h1>{ this.props.name + ' ' } <span className="abv-title"> { this.props.abv + '%' }</span></h1>
+    );
+
   }
 
   render(){
     return (
       <li onClick={this.handleOnClick}>
-        <h1>{ this.props.name }</h1>
-        <li >
-          {this.renderDescription()}
-        </li>
+        { this.renderTitle() }
+        { this.renderDescription() }
       </li>
     );
   }
